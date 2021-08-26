@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- ***********************  HEADER  *********************** -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/contact-styles.css">
+    <header>
+      <title>UniCars</title>
+          <img class="logo"src="images\UniCars2.png">
+          <button class="btn-group">Sign-up</button>
+          <button class="btn-group">Login</button>
+    </header>
+  </head>
+  <body>
+    <main>
+      <!-- ***********************  NAVIGATION BAR  *********************** -->
+      <div class="topnav">
+        <a href="#home">Home</a>
+        <a href="#catalogue">Catalogue</a>
+        <a class="active" href="#contact">Contact</a>
+        <a href="#about">About</a>
+      </div>
+      
+
+      <!-- ********************  CONTACT BODY  ********************* -->
+      <div class="container">
+        <div class="box">
+            <section class = "headers"> <!-- using class welcome as placeholder 
+                while css file isnt made-->
+                  <h1>CONTACT</h1>
+                  <h2>user</h2>
+                   <!-- ********************  FORM ********************* -->
+                  <form class = "contact-form" action="/placeholder.php"> <!--no php page yet-->
+                    <label>Name: </label>
+                    <input type="text" name="fname" required='required'>
+                    <label>Last Name: </label>
+                    <input type="text" name="lname" required='required'><br>
+                    <label>Recipient: </label>
+                    <input type="text" name="recip" required='required'>
+                    <label>Phone Number:  </label>
+                    <input type="text" name="phone" pattern="[0-9]+" required='required' minlength="10" maxlength="12" ><br><br>
+                    <!-- *****************  TEXT AREA  ***************** -->
+                    <textarea class="contact-textarea" name="contact-textarea" rows="4" cols="50">
+                               Enter a message here to send to the recipient.
+                      </textarea>
+                      <br><br>
+                      <input class="message-submit" type="submit" value="Submit">
+                    </form>
+                    <p>CONTACT DETAILS: PHONE: 0278828905   EMAIL: wrdquinn@gmail.com   ADDRESS: 14/2 Wakefield Street, Auckland CBD, Auckland 1010</p>
+                </section>
+        </div>
+      </div>
+      <!-- *****************  FOOTER  ***************** -->
+      <footer>
+        <div class="content-wrap">
+          <h1>CONTACT US!</h1>
+          <!-- Social media and contact links. Add or remove any networks. -->
+            <span>
+              <a href="mailto:wrdquinn@gmail.com">
+              <img class = "links" src="images\Mail.png">
+              <a href="https://twitter.com/Monkey_Nutz">
+              <img class = "links" src="images\twit.png">
+              <a href="https://www.linkedin.com/in/william-quinn-03694a218/">
+              <img class = "links" src="images\in.png">
+              <a href="https://www.facebook.com/will.postblocc.5">
+              <img class = "links" src="images\fb.png">
+            </span>
+        </div>
+      </footer>
+    </main>
+  </body>
+</html>
