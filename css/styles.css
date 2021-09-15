@@ -6,7 +6,7 @@ Colour Palette
 /* Global styles
 ---------------------------------------------*/
 html{
-  background-color: #8e53a1ff;
+  background-color: black;
 }
   /* Home-Header
   ---------------------------------------------*/
@@ -20,6 +20,7 @@ html{
     border-bottom: groove black;
   }
   .btn-group{
+    font-family: 'Poppins', sans-serif;
     float: right;
     margin: 20px;
     width: 200px;
@@ -42,6 +43,7 @@ html{
   }
   
   .topnav {
+    font-family: 'Poppins', sans-serif;
     overflow: hidden;
     background-color: #753b76ff;
     box-shadow:
@@ -76,21 +78,24 @@ html{
   /* Home-Body
   ---------------------------------------------*/
   .welcome h1 {
+    font-family: 'Poppins', sans-serif;
     width: 50px;
     margin-top: 10px;
     margin-left: 50px;
     margin-right: 50px;
     font-size: 4rem;
     position: absolute;
-    color: #8e53a1ff;
+    color: white;
+    text-shadow: 0 1px 0 #CCCCCC, 0 2px 0 #c9c9c9, 0 3px 0 #bbb, 0 4px 0 #b9b9b9, 0 5px 0 #aaa, 0 6px 1px rgba(0,0,0,.1), 0 0 5px rgba(0,0,0,.1), 0 1px 3px rgba(0,0,0,.3), 0 3px 5px rgba(0,0,0,.2), 0 5px 10px rgba(0,0,0,.25), 0 10px 10px rgba(0,0,0,.2), 0 20px 20px rgba(0,0,0,.15);
   }
   .welcome h2 {
+    font-family: 'Poppins', sans-serif;
     width: 50px;
-    margin-left: 50px;
+    margin-left: 60px;
     font-size: 1rem;
     position: absolute;
-    margin-top: 75px;
-    color: #8e53a1ff;
+    margin-top: 90px;
+    color: white;
   }
   
   .flex-container {
@@ -150,7 +155,11 @@ html{
 ;
 }
 .salesheader{
+  margin-top: 10px;
+  font-size: 4rem;
+  font-family: 'Poppins', sans-serif;
   color: white;
+  text-shadow: 0 1px 0 #CCCCCC, 0 2px 0 #c9c9c9, 0 3px 0 #bbb, 0 4px 0 #b9b9b9, 0 5px 0 #aaa, 0 6px 1px rgba(0,0,0,.1), 0 0 5px rgba(0,0,0,.1), 0 1px 3px rgba(0,0,0,.3), 0 3px 5px rgba(0,0,0,.2), 0 5px 10px rgba(0,0,0,.25), 0 10px 10px rgba(0,0,0,.2), 0 20px 20px rgba(0,0,0,.15);
 }
   /* Home-Footer
   ---------------------------------------------*/
@@ -158,13 +167,14 @@ html{
     width: 50px;
     margin-left: 75px;
     margin-right: 75px;
-    text-align: center;
-    color: #753b76ff;
   }
   footer{
+    font-size: 2rem;
+    font-family: 'Poppins', sans-serif;
     text-align: center;
     color: #fff;
     background-color: black;
+    text-shadow: 0 1px 0 #CCCCCC, 0 2px 0 #c9c9c9, 0 3px 0 #bbb, 0 4px 0 #b9b9b9, 0 5px 0 #aaa, 0 6px 1px rgba(0,0,0,.1), 0 0 5px rgba(0,0,0,.1), 0 1px 3px rgba(0,0,0,.3), 0 3px 5px rgba(0,0,0,.2), 0 5px 10px rgba(0,0,0,.25), 0 10px 10px rgba(0,0,0,.2), 0 20px 20px rgba(0,0,0,.15);
   }
   /* Other
   ---------------------------------------------*/

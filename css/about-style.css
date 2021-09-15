@@ -16,6 +16,7 @@ html{
     margin-left: 10px;
 }
 .btn-group{
+  font-family: 'Poppins', sans-serif;
   float: right;
   margin: 20px;
   width: 200px;
@@ -42,6 +43,7 @@ body {
 }
 
 .topnav {
+  font-family: 'Poppins', sans-serif;
   overflow: hidden;
   background-color: #753b76ff;
   box-shadow:
@@ -75,7 +77,8 @@ body {
 
 /* Home-Body
 ---------------------------------------------*/
-.welcome h1 {
+.headers h1 {
+  font-family: 'Poppins', sans-serif;
   width: 50px;
   margin-top: -20px;
   margin-left: -20px;
@@ -83,6 +86,28 @@ body {
   font-size: 4rem;
   position: absolute;
   color: #8e53a1ff;
+  text-shadow: 0 1px 0 #8e53a1ff, 0 2px 0 rgb(128, 75, 146), 0 3px 0 rgb(112, 65, 128), 0 4px 0 rgb(97, 58, 110), 0 5px 0 rgb(90, 54, 102), 0 6px 1px rgba(0,0,0,.1), 0 0 5px rgba(0,0,0,.1), 0 1px 3px rgba(0,0,0,.3), 0 3px 5px rgba(0,0,0,.2), 0 5px 10px rgba(0,0,0,.25), 0 10px 10px rgba(0,0,0,.2), 0 20px 20px rgba(0,0,0,.15);
+}
+.headers h2 {
+  font-family: 'Poppins', sans-serif;
+  width: 50px;
+  margin-top: -20px;
+  margin-left: 50%;
+  font-size: 4rem;
+  position: absolute;
+  color: #8e53a1ff;
+  text-shadow: 0 1px 0 #8e53a1ff,
+   0 2px 0 rgb(128, 75, 146),
+    0 3px 0 rgb(112, 65, 128),
+     0 4px 0 rgb(97, 58, 110),
+      0 5px 0 rgb(90, 54, 102),
+       0 6px 1px rgba(0,0,0,.1),
+        0 0 5px rgba(0,0,0,.1),
+         0 1px 3px rgba(0,0,0,.3),
+          0 3px 5px rgba(0,0,0,.2),
+           0 5px 10px rgba(0,0,0,.25),
+            0 10px 10px rgba(0,0,0,.2),
+             0 20px 20px rgba(0,0,0,.15);
 }
 .container {
   display: flex;
@@ -94,8 +119,8 @@ body {
 
 .box {
   color: #8e53a1ff;
-  height: 500px;
-  width: 1000px;
+  height: 600px;
+  width: 1500px;
   background: #fff;
   padding: 50px;
   border-radius: 10px;
@@ -114,9 +139,26 @@ body {
 ;
 }
 .about-content{
-  margin-top: 50px;
+  font-family: 'Open Sans', sans-serif;
+  margin-top: 8%;
   position: absolute;
-  margin-left: -50px;
+  margin-left: -20px;
+  font-size: 17px;
+  text-align: left;
+}
+#map {
+  height: 90%;
+  margin-top: 5%;
+  width: 48%;
+  margin-left: 53%;
+  box-shadow:
+  0 2.8px 2.2px rgba(0, 0, 0, 0.02),
+  0 6.7px 5.3px rgba(0, 0, 0, 0.028),
+  0 12.5px 10px rgba(0, 0, 0, 0.035),
+  0 22.3px 17.9px rgba(0, 0, 0, 0.042),
+  0 41.8px 33.4px rgba(0, 0, 0, 0.05),
+  0 100px 80px rgba(0, 0, 0, 0.07)
+;
 }
 /* Home-Footer
 ---------------------------------------------*/
@@ -124,12 +166,14 @@ body {
   width: 50px;
   margin-left: 75px;
   margin-right: 75px;
-  text-align: center;
 }
 footer{
+  font-size: 2rem;
+  font-family: 'Poppins', sans-serif;
   text-align: center;
   color: #fff;
   background-color: black;
+  text-shadow: 0 1px 0 #CCCCCC, 0 2px 0 #c9c9c9, 0 3px 0 #bbb, 0 4px 0 #b9b9b9, 0 5px 0 #aaa, 0 6px 1px rgba(0,0,0,.1), 0 0 5px rgba(0,0,0,.1), 0 1px 3px rgba(0,0,0,.3), 0 3px 5px rgba(0,0,0,.2), 0 5px 10px rgba(0,0,0,.25), 0 10px 10px rgba(0,0,0,.2), 0 20px 20px rgba(0,0,0,.15);
 }
 /* Other
 ---------------------------------------------*/

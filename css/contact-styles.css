@@ -26,6 +26,7 @@ header{
   border-bottom: groove black;
 }
 .btn-group{
+  font-family: 'Poppins', sans-serif;
   float: right;
   margin: 20px;
   width: 200px;
@@ -42,6 +43,7 @@ header{
 /* Contact-Navbar
 ---------------------------------------------*/
 .topnav {
+  font-family: 'Poppins', sans-serif;
   overflow: hidden;
   background-color: #753b76ff;
   box-shadow:
@@ -77,13 +79,21 @@ body {
     background-color: black;
   }
 .headers h1 {
+  font-family: 'Poppins', sans-serif;
   width: 50px;
   margin-top: -40px;
   margin-left: -40px;
   font-size: 4rem;
   color: #8e53a1ff;
+  text-shadow: 0 1px 0 #8e53a1ff, 0 2px 0 rgb(128, 75, 146),
+   0 3px 0 rgb(112, 65, 128), 0 4px 0 rgb(97, 58, 110),
+    0 5px 0 rgb(90, 54, 102), 0 6px 1px rgba(0,0,0,.1),
+     0 0 5px rgba(0,0,0,.1), 0 1px 3px rgba(0,0,0,.3),
+      0 3px 5px rgba(0,0,0,.2), 0 5px 10px rgba(0,0,0,.25),
+       0 10px 10px rgba(0,0,0,.2), 0 20px 20px rgba(0,0,0,.15);
 }
 .headers h2 {
+  font-family: 'Poppins', sans-serif;
   width: 50px;
   margin-left: -40px;
   margin-top: -50px;
@@ -137,12 +147,14 @@ h3{
     margin-left: -72.5%;
     color:#8b9aa0;
     font-weight: 1000;
+    font-family: 'Open Sans', sans-serif;
   }
 .contact-form {
     margin-left: 225px;
     position: absolute;
     font-size: 1rem;
     color: #8b9aa0;
+    font-family: 'Open Sans', sans-serif;
   }
   input[type=text], select {
     width: 25%;
@@ -153,6 +165,7 @@ h3{
     box-sizing: border-box;
     margin-bottom: 10px;
     color: #8b9aa0;
+    font-family: 'Open Sans', sans-serif;
   }
   input[type=submit] {
     width: 50%;
@@ -165,10 +178,20 @@ h3{
     margin-top: 200px;
     position: absolute;
     margin-left: -30%;
+    font-family: 'Poppins', sans-serif;
+    box-shadow:
+  0 2.8px 2.2px rgba(0, 0, 0, 0.02),
+  0 6.7px 5.3px rgba(0, 0, 0, 0.028),
+  0 12.5px 10px rgba(0, 0, 0, 0.035),
+  0 22.3px 17.9px rgba(0, 0, 0, 0.042),
+  0 41.8px 33.4px rgba(0, 0, 0, 0.05),
+  0 100px 80px rgba(0, 0, 0, 0.07)
+;
   }
   p{
       margin-top: 475px;
       color: #8b9aa0;
+      font-family: 'Open Sans', sans-serif;
   }
 /* Home-Footer
 ---------------------------------------------*/
@@ -176,13 +199,14 @@ h3{
   width: 50px;
   margin-left: 75px;
   margin-right: 75px;
-  text-align: center;
-  color: #753b76ff;
 }
 footer{
+  font-size: 2rem;
+  font-family: 'Poppins', sans-serif;
   text-align: center;
   color: #fff;
   background-color: black;
+  text-shadow: 0 1px 0 #CCCCCC, 0 2px 0 #c9c9c9, 0 3px 0 #bbb, 0 4px 0 #b9b9b9, 0 5px 0 #aaa, 0 6px 1px rgba(0,0,0,.1), 0 0 5px rgba(0,0,0,.1), 0 1px 3px rgba(0,0,0,.3), 0 3px 5px rgba(0,0,0,.2), 0 5px 10px rgba(0,0,0,.25), 0 10px 10px rgba(0,0,0,.2), 0 20px 20px rgba(0,0,0,.15);
 }
 /* Other
 ---------------------------------------------*/
