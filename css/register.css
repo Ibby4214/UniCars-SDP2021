@@ -1,0 +1,121 @@
+html{
+    background-color: #8e53a1ff;
+  }
+header{
+    background-color: #4f1752ff;
+    border-bottom: groove black;
+}
+.logo{
+    width: 20%;
+    height: 25%;
+    margin-left: 10px;
+}
+body {
+    margin: 0;
+    background-color: #8e53a1ff;
+  
+}
+.container {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .box {
+    height: 800px;
+    width: 400px;
+    background: #fff;
+    padding: 50px;
+    border-radius: 10px;
+    position: relative;
+    text-align: center;
+    border: groove;
+    box-shadow:
+    0 2.8px 2.2px rgba(0, 0, 0, 0.02),
+    0 6.7px 5.3px rgba(0, 0, 0, 0.028),
+    0 12.5px 10px rgba(0, 0, 0, 0.035),
+    0 22.3px 17.9px rgba(0, 0, 0, 0.042),
+    0 41.8px 33.4px rgba(0, 0, 0, 0.05),
+    0 100px 80px rgba(0, 0, 0, 0.07)
+  ;
+    margin-top: 50px;
+    margin-bottom: 50px;
+  }
+td{
+    font-family: 'Open Sans', sans-serif;
+    color: #8e53a1ff;
+    border: none;
+    border-radius: 4px;
+}
+.back{
+    margin-left: 6%;
+    margin-top: 10px;
+    font-family: 'Poppins', sans-serif;
+    color: #8e53a1ff;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    box-shadow:
+    0 2.8px 2.2px rgba(0, 0, 0, 0.02),
+    0 6.7px 5.3px rgba(0, 0, 0, 0.028),
+    0 12.5px 10px rgba(0, 0, 0, 0.035),
+    0 22.3px 17.9px rgba(0, 0, 0, 0.042),
+    0 41.8px 33.4px rgba(0, 0, 0, 0.05),
+    0 100px 80px rgba(0, 0, 0, 0.07)
+  ;
+}
+::placeholder{
+    color: #8e53a1ff;
+}
+input{
+    font-family: 'Poppins', sans-serif;
+    color: #8e53a1ff;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    box-shadow:
+    0 2.8px 2.2px rgba(0, 0, 0, 0.02),
+    0 6.7px 5.3px rgba(0, 0, 0, 0.028),
+    0 12.5px 10px rgba(0, 0, 0, 0.035),
+    0 22.3px 17.9px rgba(0, 0, 0, 0.042),
+    0 41.8px 33.4px rgba(0, 0, 0, 0.05),
+    0 100px 80px rgba(0, 0, 0, 0.07)
+  ;
+}
+.login{
+    font-family: 'Poppins', sans-serif;
+    color: #8e53a1ff;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    box-shadow:
+    0 2.8px 2.2px rgba(0, 0, 0, 0.02),
+    0 6.7px 5.3px rgba(0, 0, 0, 0.028),
+    0 12.5px 10px rgba(0, 0, 0, 0.035),
+    0 22.3px 17.9px rgba(0, 0, 0, 0.042),
+    0 41.8px 33.4px rgba(0, 0, 0, 0.05),
+    0 100px 80px rgba(0, 0, 0, 0.07)
+  ;
+}
+.data {
+    display: none;
+    font-family: 'Poppins', sans-serif;
+    color: #8e53a1ff;
+}
+h3{
+    font-size: 3rem;
+    color: #8e53a1ff;
+    font-family: 'Poppins', sans-serif;
+    text-shadow: 0 1px 0 #8e53a1ff, 0 2px 0 rgb(128, 75, 146), 0 3px 0 rgb(112, 65, 128), 0 4px 0 rgb(97, 58, 110), 0 5px 0 rgb(90, 54, 102), 0 6px 1px rgba(0,0,0,.1), 0 0 5px rgba(0,0,0,.1), 0 1px 3px rgba(0,0,0,.3), 0 3px 5px rgba(0,0,0,.2), 0 5px 10px rgba(0,0,0,.25), 0 10px 10px rgba(0,0,0,.2), 0 20px 20px rgba(0,0,0,.15);
+}
+.g-signin2 {
+    position: static;
+    top: 50%;
+    left: 50%;
+}
+.btn-danger {
+    color: #8e53a1ff;
+    background-color: white;
+    border: none;
+    forced-color-adjust: white;
+    
+}

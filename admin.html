@@ -1,0 +1,32 @@
+<HTML XMLns="http://www.w3.org/1999/xHTML">
+  <head>
+	  <script type="text/javascript" src="xhr.js"></script>
+    <script type="text/javascript" src="admin.js"> </script>
+    <link rel="stylesheet" href="css/tables.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=PT+Serif&family=Poppins:wght@500&display=swap" rel="stylesheet">
+    <header>
+      <title>UniCars</title>
+          <img class="logo"src="images\UniCars2.png">
+    </header>
+  </head>
+  <body>
+    <button class= "back" onclick="location.href='index.html'" >Back to Home</button>
+    <button class= "adminhub" onclick="location.href='adminhub.php'" >Vehicle Database</button>
+  <h1>Customer Message Search &nbsp;</h1>
+	<form>
+	    <label>Enter Recipient Details<input type="text" name="bsearch"> </label>
+	    <input name="sbutton" type = "button" onClick = "getData('admin.php', 'content' , bsearch.value)" value = "Search">
+	</form>
+	<div class= "content" >
+      <table class="table">
+        <th scope="col">First Name</th>
+        <th scope="col">Last Name</th>
+        <th scope="col">Recipient</th>
+        <th scope="col">Phone Number</th>
+        <th scope="col">Message</th>
+      </table>
+	</div>
+ </body>
+</HTML>

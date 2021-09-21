@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/login.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=PT+Serif&family=Poppins:wght@500&display=swap" rel="stylesheet">
+  <title>Login Page</title>
+</head>
+<header>
+  <title>UniCars</title>
+    <img class="logo"src="images\UniCars2.png"> 
+</header>
+<body>
+
+  <button class= "back" onclick="location.href='index.html'" class="btn-group">Back to Home</button>
+  <button class= "back2login" onclick="location.href='login.html'" class="btn-group">Back to login</button>
+
+  <div class="container">
+    <div class="box">
+        <section class = "welcome"> <!-- using class welcome as placeholder 
+            while css file isnt made-->
+            <center>
+              <h3>SIGN IN</h3>
+              <form action="adminloginprocess.php" method="post">
+                  <table>
+                    <tr>
+                      <td>Email:</td>
+                      <td><input type="text" name="email" placeholder="Enter Email Here"></td>
+                    </tr>
+                    <tr>
+                      <td>Password:</td>
+                      <td><input type="password" name="upassword" placeholder="Enter Password Here"></td>
+                    </tr>
+            
+                    <tr>
+                        <td><input type="submit" name="submit" value="Login"></td>
+                    </tr>
+                  </table>
+              </form>
+              </center>
+    </div>
+  </div>
+
+</html>

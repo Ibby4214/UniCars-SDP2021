@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- ***********************  HEADER  *********************** -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=PT+Serif&family=Poppins:wght@500&display=swap" rel="stylesheet">
+    <meta name="google-signin-client_id" content="773304142493-8agont039ue3v46c7qv8fll90c8d95vt.apps.googleusercontent.com">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css"  rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/styles.css">
+    <header>
+      <title>UniCars</title>
+      <a href="index.html">
+        <img class="logo"src="images\UniCars2.png" >
+      </a>
+        <div class="g-signin2" data-onsuccess="onSignIn"></div>
+        <div class="data">
+          <p id="name"></p>
+          <img id="image" class="rounded-circle" width="50" height="50" />
+          <button type="button" class="btn btn-danger" onclick="signOut();">Sign Out</button>
+        </div>
+          <button onclick="location.href='register.html'" class="btn-group">Sign-up</button>
+          <button onclick="location.href='login.html'" class="btn-group login-btn">Login</button>
+    </header>
+  </head>
+  <body>
+    <script src="signout.js"></script>
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
+     integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <main>
+      <!-- ***********************  NAVIGATION BAR  *********************** -->
+      <div class="topnav">
+        <a class="active" href="index.html">Home</a>
+        <a href="catalogue.html">Catalogue</a>
+        <a href="contact.html">Contact</a>
+        <a href="about.html">About</a>
+      </div>
+      
+
+      <!-- ********************  WELCOME  ********************* -->
+
+      <div class="flex-container">
+
+        <div class="flex-child magenta">
+          <section class = "welcome">
+              <h1>WELCOME</h1>
+              <h2>UniCars, Made by students, For students.</h2>
+              <video autoplay muted loop id="myVideo">
+               <source src="images/carvid.mp4" type="video/mp4">
+              </video>
+            </section>
+        </div>
+        <!-- ***********************  SALES  *********************** -->
+        <div class="flex-child green">
+          <section  class = "sales">
+            <div class="content-wrap">
+              <h1 class ="salesheader">SALES</h1>
+              <section class="sales-content">
+                <img class="sales-image" src="images/LBTMFZET.jpg" width="415px" height="261px" onclick="location.href='catalogue.html'"> 
+
+                <table>
+                    <tr> 
+
+                <th> 2011 Kia Sorento </th>
+                </tr>
+                <tr>
+                    <td>$45,000</td>
+
+                </tr>
+
+                </table>
+              </section>
+            </div>
+          </section>
+        </div>
+        
+      </div>
+      <!-- *****************  FOOTER  ***************** -->
+      <footer>
+        <div class="content-wrap">
+          <h1>SOCIAL MEDIA</h1>
+          <!-- Social media and contact links. Add or remove any networks. -->
+            <span>
+              <a href="https://twitter.com/home">
+              <img class = "links"  src="images\twitter.png">
+              <a href="https://www.linkedin.com/in/william-quinn-03694a218/">
+              <img class = "links"  src="images\linkedin.png">
+              <a href="https://www.facebook.com">
+              <img class = "links"  src="images\facebook.png">
+            </span>
+        </div>
+      </footer>
+    </main>
+  </body>
+</html>

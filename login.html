@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="google-signin-client_id" content="773304142493-8agont039ue3v46c7qv8fll90c8d95vt.apps.googleusercontent.com">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css"  rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/login.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=PT+Serif&family=Poppins:wght@500&display=swap" rel="stylesheet">
+  <title>Login Page</title>
+</head>
+<header>
+  <title>UniCars</title>
+    <img class="logo"src="images\UniCars2.png"> 
+</header>
+<body>
+  <button class= "back" onclick="location.href='index.html'" class="btn-group">Back to Home</button>
+  <button class= "adminlogin" onclick="location.href='adminlogin.html'" class="btn-group">Admin Login</button>
+
+  <script src="login.js"></script>
+  <script src="https://apis.google.com/js/platform.js" async defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
+   integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+   
+    <div class="container">
+      <div class="box">
+          <section class = "welcome"> <!-- using class welcome as placeholder 
+              while css file isnt made-->
+              <center>
+              <h3>SIGN IN</h3>
+              <form action="loginprocess.php" method="post">
+                  <table>
+                    <tr>
+                      <td>Email:</td>
+                      <td><input type="text" name="email" placeholder="Enter Email"></td>
+                    </tr>
+                    <tr>
+                      <td>Password:</td>
+                      <td><input type="password" name="upassword" placeholder="Enter Password"></td>
+                    </tr>
+            
+                    <tr>
+                        <td><input class = "login" type="submit" name="submit" value="Login"></td>
+                    </tr>
+                  </table>
+              </form>
+              <h3>OR</h3>
+              <div class="g-signin2" data-onsuccess="onSignIn"></div>
+              <div class="data">
+                <p>Name:</p>
+                <p id="name"></p>
+                <img id="image" class="rounded-circle" width="100" height="100" />
+                <p>Email:</p>
+                <p id="email"></p>
+                <button type="button" class="btn btn-danger" onclick="signOut();">Sign Out</button>
+            </div>
+          </section>
+        </center>
+      </div>
+    </div>
+</body>
+</html>
