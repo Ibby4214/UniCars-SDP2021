@@ -219,3 +219,10 @@ footer{
 /* Other
 ---------------------------------------------*/
 
+#recip{
+  width:250px;   
+ }
+
+ #recip option{
+  width:250px;   
+}
