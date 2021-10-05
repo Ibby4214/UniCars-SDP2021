@@ -52,9 +52,18 @@
                 while css file isnt made-->
                   <h1>CATALOGUE</h1>
                   <form>
-                    <label>Please Type in a keyword for a specific vehicle<input type="text" name="bsearch"> </label>
+                    <label>Please Type in a keyword for a specific vehicle<input type="text" name="bsearch" onkeypress="ExplicitPrevention(event)"> </label>
                     <input name="sbutton" type = "button" onClick = "getData('admincatalogue.php', 'content' , bsearch.value)" value = "Search">
-                </form>
+                  </form>
+                  <script>
+                    const ExplicitPrevention = function (event) {
+                        var keyPressed = event.keyCode || event.which;
+                        if (keyPressed === 13) {
+                            alert("Test: You pressed the Enter key!!");
+                          event.preventDefault();
+                        }
+                    }
+                </script>
                   <div class= "content" >
                     <table class="table">
                       <th scope="col">Name</th>
