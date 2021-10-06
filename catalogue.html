@@ -34,7 +34,7 @@
           <button onclick="location.href='login.html'" class="btn-group login-btn">Login</button>
     </header>
   </head>
-    <body onload="getData('admincatalogue.php', 'content' , bsearch.values());">
+  <body>
 
     <main>
       <!-- ***********************  NAVIGATION BAR  *********************** -->
@@ -52,8 +52,9 @@
                 while css file isnt made-->
                   <h1>CATALOGUE</h1>
                   <form>
-                    <label>Please Type in a keyword for a specific vehicle: <input type="text" name="bsearch"> </label>
-                    <input name="sbutton" type="button" onClick="getData('admincatalogue.php', 'content' , bsearch.value)" value="Search">
+                    <label>Please Type in a keyword for a specific vehicle: </label>
+                    <input name="bsearch">
+                    <input type="button" name="sbutton" onclick="getData('admincatalogue.php', 'content' , bsearch.value)" value="Search">
                   </form>
                   <div class= "content" >
                     <table class="table">
