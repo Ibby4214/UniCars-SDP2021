@@ -12,6 +12,13 @@
     <meta name="google-signin-client_id" content="773304142493-8agont039ue3v46c7qv8fll90c8d95vt.apps.googleusercontent.com">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css"  rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
     <link rel="stylesheet" href="css/catalogue-styles.css">
+    <style>
+        .car_image{
+            width: 300px;
+            height: 200px;
+            border-radius: 8px;
+        }
+    </style>
     <header>
 
       <script src="signout.js"></script>
@@ -57,14 +64,21 @@
                 </form>
                   <div class= "content" >
                     <table class="table">
-                      <th scope="col">Name</th>
-                      <th scope="col">Year</th>
-                      <th scope="col">Seats</th>
-                      <th scope="col">Odometer</th>
-                      <th scope="col">make</th>
-                      <th scope="col">bodystyle</th>
-                      <th scope="col">fuel</th>
-                      <th scope="col">transmission</th>
+                      <thead>
+                        <tr>
+                        <th scope="col">Name</th>
+                        <th scope="col">Year</th>
+                        <th scope="col">Seats</th>
+                        <th scope="col">Odometer</th>
+                        <th scope="col">make</th>
+                        <th scope="col">bodystyle</th>
+                        <th scope="col">fuel</th>
+                        <th scope="col">transmission</th>
+                        <th scope="col">Photo</th>
+                        </tr>
+                      </thead>
+                      <tbody id="cat_body" >
+                      </tbody>
                     </table>
                   </div> 
                 </section>
@@ -87,5 +101,81 @@
         </div>
       </footer>
     </main>
+
+
+    <script type="text/javascript">
+
+      function getList(){
+
+         $.post("ajax_data.php",
+          {
+            name: "",
+            city: ""
+          },
+          function(data, status){
+            
+            try {
+                var resp_obj = JSON.parse(data);
+                if(resp_obj.status==1){
+
+                  var cats = resp_obj.output.catalogue;
+                  $.each(cats, function( index, row ) {
+                    var row_string = '<tr class="cat_row" data-id="'+row.catalogid+'" >'+
+                    '<td>'+row.vname+
+                    '</td>'+
+                    '<td>'+row.myear+
+                    '</td>'+
+                    '<td>'+row.seats+
+                    '</td>'+
+                    '<td>'+row.odometer+
+                    '</td>'+
+                    '<td>'+row.make+
+                    '</td>'+
+                    '<td>'+row.bodystyle+
+                    '</td>'+
+                    '<td>'+row.fuel+
+                    '</td>'+
+                    '<td>'+row.transmission+
+                    '</td>'+
+                    '<td><img class="car_image" src="image_builder.php?id='+row.catalogid+'" >'+
+                    '</td>'+
+                    
+                    
+                    '<tr>';
+
+                    var check_old = 0;
+
+                    $(".cat_row").each(function(){
+                      if($(this).data('id')==row.catalogid){
+                        check_old++;
+                      }
+                    });
+
+                    if(check_old==0){
+                      $('#cat_body').append(row_string);
+                    }
+
+                  });
+
+                }else{
+                  alert(resp_obj.error);
+                }
+
+              }
+              catch(err) {
+                console.log(err.message);
+              }
+          });
+      }
+
+      $(document).ready(function(){
+
+        getList();
+        setInterval(function(){ getList(); }, 3000);
+
+      });
+      
+
+    </script>
   </body>
 </html>
