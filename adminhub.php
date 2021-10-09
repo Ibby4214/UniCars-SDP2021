@@ -136,7 +136,7 @@
                                 <td> Body Style </td>
                                 <td> Fuel </td>
                                 <td> Transmission </td>
-                                <!-- <td> Image </td> -->
+                                <!-- <td> Image </td> --> 
                             </tr>
 
                             <?php 

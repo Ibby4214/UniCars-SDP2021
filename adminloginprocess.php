@@ -27,7 +27,9 @@ require_once("Dbconn.php");
         			echo 'alert("You have entered the wrong Username or password! Please try again");';
         			echo 'window.location.href = "login.html" ';
         			echo '</script>';
-				}
+				} 
         
 		}
    ?>
+
+
