@@ -2,7 +2,16 @@
 ?>
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+
+  <header>    
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Modal</title>
+        <script defer src="modal.js"></script>
+        <link rel="stylesheet" href="css/styles.css">
+     </header>
 
     <!-- Gives the 4x4 layout of vehicles -->
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
@@ -32,6 +41,10 @@
     <!-- ***********************  HEADER  *********************** -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Test -->
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
     <script type="text/javascript" src="xhr.js"></script>
     <script type="text/javascript" src="admin.js"> </script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -75,20 +88,24 @@
   
           
       <!-- ********************  ABOUT BODY  ********************* -->
+      <!--  -->
+      
       <div class="container">
         <div class="box">
             <section class = "welcome"> <!-- using class welcome as placeholder while css file isnt made-->
                   
                     <h1>CATALOGUE</h1>
+                    <br>
                     <form style = "width:700px";>
                     
-                    <label>Please Type in a keyword for a specific vehicle  <input type="text" name="bsearch"> </label>
+                    <!-- <label>Please Type in a keyword for a specific vehicle  <input type="text" name="bsearch"> </label>
                     <input name="sbutton" type = "button" onClick = "getData('admincatalogue.php', 'content' , bsearch.value)" value = "Search"> 
-                    <br>
+                    <br> -->
                                     
                     <?php  include ("Dbconn.php");
                     $query = "SELECT * FROM catalogue";
                     $result = mysqli_query($conn,$query);
+
   
                     if(mysqli_num_rows($result)>0){
                     while ($row = mysqli_fetch_array($result))
@@ -98,7 +115,7 @@
                         $images3 = '<img src="data:image;base64,'.base64_encode($row['images3']).'" style="width:250px; height:170px;" alt="" /><br />';?>
 
                         <div class="col-md-4" style = "width:325px;"> <br> 
-                        
+
                         <form method="post" action="cardtest.php?action=add&id=<?php echo $row["catalogid"]?>">
                         <div style= "height: 350px; border: 1px solid #333; background-color:#f1f1f11; border-radius:5px; padding: 5px 10px 15px 20px; font-family: 'Poppins', sans-serif; ?>">
                         
@@ -122,7 +139,22 @@
                         echo"<br>";?>
                         <!-- Description, size needs fixing and placement is way off -->
                         <h2 class ="text-info"> <?php echo $row['descrip'];?>  </div>
-                          
+
+                        <body>
+                        <button data-modal-target="#modal">Full Listing</button>
+                        <div class="modal" id="modal">
+                        <div class="modal-header">
+                        <div class="title"> Full Listing </div>
+                        <button data-close-button class="close-button">&times;</button>
+                        </div>
+    
+                        <div class="modal-body">
+                        aaaaaaaaaa
+                        </div>
+                        </div>
+                        <div id="overlay"></div>
+                        </body>
+                        
                       </div>                    
                 </form>     
             </div>
