@@ -76,27 +76,44 @@
                     <input name="sbutton" type = "button" onclick="getList('search',document.getElementById('search_input').value)" value = "Search">
                   </form>
 
-                  <div id = "filters">
-                    <Span>Make</Span>
-                    <select  onchange="getList('filter',this.value)" >
-                      <option value="" disabled="" selected="" >Select Filter </option>
-                      <option value= "Kia">Kia</option>
-                      <option value= "Mazda">Mazda</option>
-                      <option value= "Ford">Ford</option>
-                      <option value= "Holden">Holden</option>
-                      <option value= "Subaru">Subaru</option>
-                      <option value= "Lexus">Lexus</option>
-                      <option value= "Toyota">Toyota</option>
-                    </select>
+                  <br/>
+                  <div class="row">
+                    <div class="form-group col-md-6">
+                      <label>Make</label>
+                      <select  onchange="getList('filter',this.value)" id="make_select"  >
+                        <option value=""  selected="" >Select Filter </option>
+                        <option value= "Kia">Kia</option>
+                        <option value= "Mazda">Mazda</option>
+                        <option value= "Ford">Ford</option>
+                        <option value= "Holden">Holden</option>
+                        <option value= "Subaru">Subaru</option> 
+                        <option value= "Lexus">Lexus</option>
+                        <option value= "Toyota">Toyota</option>
+                      </select>
+                    </div>
+                    <div class="form-group col-md-6">
+                      <label>Fuel</label>
+                      <select  onchange="getList('filter',this.value)"  id="fuel_select" >
+                        <option value=""  selected="" >Select Filter </option>
+                        <option value= "Petrol">Petrol</option>
+                        <option value= "Diesel">Diesel</option>
+                        <option value= "Hybrid">Hybrid</option>
+                      </select>
+                    </div>
+
+                    <div class="form-group col-md-6">
+                      <label>Transmission</label>
+                      <select  onchange="getList('filter',this.value)"  id="transselect" >
+                        <option value=""  selected="" >Select Filter </option>
+                        <option value= "Automatic">Automatic</option>
+                        <option value= "Manual">Manual</option>
+                        
+                      </select>
+                    </div>
+
+
                   </div>
-                  <br>
-                  <Span>Fuel</Span>
-                  <select  onchange="getList('filter1',this.value)" >
-                    <option value="" disabled="" selected="" >Select Filter </option>
-                    <option value= "Petrol">Petrol</option>
-                    <option value= "Diesel">Diesel</option>
-                    <option value= "Hybrid">Hybrid</option>
-                  </select>
+
 
                   <div class= "content" id="MAIN_CONTENT" >
 
@@ -136,10 +153,26 @@
           $('#MAIN_CONTENT').html("...");
         }
 
+
+
+        var fuel = $('#fuel_select').val();
+        var transmission = $('#transselect').val();
+        var make = $('#make_select').val();
+
+        if(type=="filter"){
+          if (fuel=="" && make=="" && transmission==""){
+            page_data = "";
+            is_mod = 0;  
+          }
+        }
+
          $.post("ajax_data.php",
           {
             type: type,
-            string: string
+            string: string,
+            fuel:fuel,
+            make:make,
+            transmission:transmission,
           },
           function(data, status){
 
@@ -157,6 +190,8 @@
           });
 
       }
+
+      /*------------------------------------------------*/
 
 
       $(document).ready(function(){

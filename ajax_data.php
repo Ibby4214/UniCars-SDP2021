@@ -4,19 +4,61 @@ include "Dbconn.php";
 
 
 
+
 if ($_POST['type']=="regular") {
   $sql = "SELECT * FROM catalogue";
 }
 
 if ($_POST['type']=="filter") {
   $string  = $_POST['string'];
-  $sql = "SELECT * FROM catalogue WHERE make LIKE '%".$string."%'";
+  $make  = $_POST['make'];
+  $fuel  = $_POST['fuel'];
+  $transmission  = $_POST['transmission'];
+  
+
+  $sql = "SELECT * FROM catalogue ";
+
+  /************************************/
+
+  if ($make!="" && $fuel=="" && $transmission=="") {
+  $sql .= "WHERE make='".$make."' ";  
+  }
+
+  if ($make!="" && $fuel!="" && $transmission=="") {
+    $sql .= "WHERE make='".$make."' AND fuel='".$fuel."'";  
+    }
+
+    if ($make!="" && $fuel=="" && $transmission!="") {
+      $sql .= "WHERE make='".$make."' AND transmission='".$transmission."'";  
+      }
+
+  /************************************/
+
+  if ($fuel!="" && $make=="" && $transmission=="") {
+    $sql .= "WHERE fuel='".$fuel."'";  
+    }
+  
+      if ($fuel!="" && $make=="" && $transmission!="") {
+        $sql .= "WHERE fuel='".$fuel."' AND transmission='".$transmission."'";  
+        }
+
+
+  /************************************/
+
+  if ($transmission!="" && $make=="" && $fuel=="") {
+    $sql .= "WHERE transmission='".$transmission."'";  
+    }
+
+
+  /************************************/
+
+  if ($fuel!="" && $make!="" && $transmission!="") {
+  $sql .= "WHERE make='".$make."' AND fuel='".$fuel."' AND transmission='".$transmission."'";  
+  }
+  
 }
 
-if ($_POST['type']=="filter1") {
-  $string  = $_POST['string'];
-  $sql = "SELECT * FROM catalogue WHERE fuel LIKE '%".$string."%'";
-}
+
 
 
 
@@ -55,6 +97,8 @@ foreach($catalogue as $row){
 
 ?>
 
+
+
 <div class="cat_row" >
   <div class="card"  >
     <div class="card-header">
@@ -68,6 +112,7 @@ foreach($catalogue as $row){
         <span class="car_text">Price : <?php echo $row['price']; ?></span><br/>
         <span class="car_text">Make : <?php echo $row['make']; ?></span><br/>
         <span class="car_text">Body style : <?php echo $row['bodystyle']; ?></span><br/>
+        <span class="car_text">Body style : <?php echo $row['transmission']; ?></span><br/>
         <span class="car_text">Fuel : <?php echo $row['fuel']; ?></span><br/>
       </div>
       <div class="half">
