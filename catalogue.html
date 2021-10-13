@@ -11,12 +11,25 @@
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=PT+Serif&family=Poppins:wght@500&display=swap" rel="stylesheet">
     <meta name="google-signin-client_id" content="773304142493-8agont039ue3v46c7qv8fll90c8d95vt.apps.googleusercontent.com">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css"  rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/catalogue-styles.css">
+    <link rel="stylesheet" href="css/catalogue.css">
     <style>
         .car_image{
             width: 300px;
             height: 200px;
             border-radius: 8px;
+        }
+        .cat_row{
+          padding: 20px;
+        }
+
+        .text-left{
+          text-align: left !important;
+        }
+        .flex{
+          display: flex;
+        }
+        .half{
+          width: 50%;
         }
     </style>
     <header>
@@ -41,7 +54,7 @@
           <button onclick="location.href='login.html'" class="btn-group login-btn">Login</button>
     </header>
   </head>
-    <body onload="getData('admincatalogue.php', 'content' , bsearch.values());">
+    <body >
 
     <main>
       <!-- ***********************  NAVIGATION BAR  *********************** -->
@@ -58,29 +71,56 @@
             <section class = "welcome"> <!-- using class welcome as placeholder 
                 while css file isnt made-->
                   <h1>CATALOGUE</h1>
-                  <form>
-                    <label>Please Type in a keyword for a specific vehicle<input type="text" name="bsearch"> </label>
-                    <input name="sbutton" type = "button" onClick = "getData('admincatalogue.php', 'content' , bsearch.value)" value = "Search">
-                </form>
-                  <div class= "content" >
-                    <table class="table">
-                      <thead>
-                        <tr>
-                        <th scope="col">Name</th>
-                        <th scope="col">Year</th>
-                        <th scope="col">Seats</th>
-                        <th scope="col">Odometer</th>
-                        <th scope="col">Price</th>
-                        <th scope="col">make</th>
-                        <th scope="col">bodystyle</th>
-                        <th scope="col">fuel</th>
-                        <th scope="col">transmission</th>
-                        <th scope="col">Photo</th>
-                        </tr>
-                      </thead>
-                      <tbody id="cat_body" >
-                      </tbody>
-                    </table>
+                  <form  onsubmit="event.preventDefault()">
+                    <label>Please Type in a keyword for a specific vehicle<input type="text" name="bsearch" id="search_input" > </label>
+                    <input name="sbutton" type = "button" onclick="getList('search',document.getElementById('search_input').value)" value = "Search">
+                    <script>
+                      $(function(){
+
+                      $('input[name="sbutton"]').click(function(){
+                      });
+
+
+                      //press enter on text area..
+
+                      $('#search_input').keypress(function (e) {
+                      var key = e.which;
+                      if(key == 13)  // the enter key code
+                      {
+                        $('input[name = sbutton]').click();
+                        return false;  
+                      }
+                      });
+
+                      });
+                    </script>
+                  </form>
+
+                  <div id = "filters">
+                    <Span class = "make">Make</Span>
+                    <select class="select1" onchange="getList('filter',this.value)" >
+                      <option value="" disabled="" selected="" >Select Filter </option>
+                      <option value= "Kia">Kia</option>
+                      <option value= "Mazda">Mazda</option>
+                      <option value= "Ford">Ford</option>
+                      <option value= "Holden">Holden</option>
+                      <option value= "Subaru">Subaru</option>
+                      <option value= "Lexus">Lexus</option>
+                      <option value= "Toyota">Toyota</option>
+                    </select>
+                  
+                  <br>
+                  <Span class = "fuel">Fuel</Span>
+                  <select class="select2" onchange="getList('filter1',this.value)" >
+                    <option value="" disabled="" selected="" >Select Filter </option>
+                    <option value= "Petrol">Petrol</option>
+                    <option value= "Diesel">Diesel</option>
+                    <option value= "Hybrid">Hybrid</option>
+                  </select>
+                  </div>
+                  <div class= "content" id="MAIN_CONTENT" >
+
+                 
                   </div> 
                 </section>
               </div>  
@@ -106,79 +146,43 @@
 
     <script type="text/javascript">
 
-      function getList(){
+      var page_data = "";
+      var is_mod = 0;
+
+      function getList(type,string){
+
+        if (type!="regular"){
+          is_mod = 1;
+          $('#MAIN_CONTENT').html("...");
+        }
 
          $.post("ajax_data.php",
           {
-            name: "",
-            city: ""
+            type: type,
+            string: string
           },
           function(data, status){
-            
-            try {
-                var resp_obj = JSON.parse(data);
-                if(resp_obj.status==1){
 
-                  var cats = resp_obj.output.catalogue;
-                  $.each(cats, function( index, row ) {
-                    var row_string = '<tr class="cat_row" data-id="'+row.catalogid+'" >'+
-                    '<td>'+row.vname+
-                    '</td>'+
-                    '<td>'+row.myear+
-                    '</td>'+
-                    '<td>'+row.seats+
-                    '</td>'+
-                    '<td>'+row.odometer+
-                    '</td>'+
-                    '<td>'+row.price+
-                    '</td>'+
-                    '<td>'+row.make+
-                    '</td>'+
-                    '<td>'+row.bodystyle+
-                    '</td>'+
-                    '<td>'+row.fuel+
-                    '</td>'+
-                    '<td>'+row.transmission+
-                    '</td>'+
-                    '<td><img class="car_image" src="image_builder.php?id='+row.catalogid+'" >'+
-                    '</td>'+
-                    
-                    
-                    '<tr>';
+            if (is_mod==0){
+              if (page_data!=data){
+                  page_data = data;
+                  $('#MAIN_CONTENT').html(data); 
+              } 
+            }
 
-                    var check_old = 0;
+            if (is_mod==1 && type!="regular"){
+              $('#MAIN_CONTENT').html(data);
+            }
 
-                    $(".cat_row").each(function(){
-                      if($(this).data('id')==row.catalogid){
-                        check_old++;
-                      }
-                    });
-
-                    if(check_old==0){
-                      $('#cat_body').append(row_string);
-                    }
-
-                  });
-
-                }else{
-                  alert(resp_obj.error);
-                }
-
-              }
-              catch(err) {
-                console.log(err.message);
-              }
           });
+
       }
 
+
       $(document).ready(function(){
-
-        getList();
-        setInterval(function(){ getList(); }, 3000);
-
+        getList('regular');
+        setInterval(function(){ getList('regular'); }, 3000);
       });
       
-
+      
     </script>
-  </body>
-</html>

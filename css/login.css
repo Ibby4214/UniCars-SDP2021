@@ -117,7 +117,8 @@ input{
     0 100px 80px rgba(0, 0, 0, 0.07)
   ;
 }
-.login{
+
+button.login{
     font-family: 'Poppins', sans-serif;
     color: #8e53a1ff;
     border: 1px solid #ccc;
@@ -131,6 +132,9 @@ input{
     0 41.8px 33.4px rgba(0, 0, 0, 0.05),
     0 100px 80px rgba(0, 0, 0, 0.07)
   ;
+    height: 2rem;
+    width: 6rem;
+    background-color: white;
 }
 .data {
     display: none;

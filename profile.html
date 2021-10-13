@@ -4,29 +4,25 @@
     <!-- ***********************  HEADER  *********************** -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/contact-styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=PT+Serif&family=Poppins:wght@500&display=swap" rel="stylesheet">
+    <script type="text/javascript" src="map.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=PT+Serif&family=Poppins:wght@500&display=swap" rel="stylesheet">
     <meta name="google-signin-client_id" content="773304142493-8agont039ue3v46c7qv8fll90c8d95vt.apps.googleusercontent.com">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css"  rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/contact.css">
+    <link rel="stylesheet" href="css/profile.css">
     <header>
       <title>UniCars</title>
-      <a href="index.html">
-        <img class="logo"src="images\UniCars2.png" >
-      </a>
+          <a href="index.html">
+            <img class="logo"src="images\UniCars2.png" >
+          </a>
           <div class="g-signin2" data-onsuccess="onSignIn"></div>
-          <div class="data">
-            <p id="name"></p>
-            <img id="image" class="rounded-circle" width="50" height="50" />
-            <button onclick="location.href='profile.html'" class="btn btn-danger">Profile</button>
             <button type="button" class="btn btn-danger" onclick="signOut();">Sign Out</button>
-          </div>
-            <button onclick="location.href='login.html'" class="btn-group login-btn" id="in">Login</button>
     </header>
   </head>
   <body>
+    <script src="login.js"></script>
     <script src="gsignout.js"></script>
     <script src="https://apis.google.com/js/platform.js" async defer></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
@@ -37,36 +33,56 @@
       <div class="topnav">
         <a href="index.html">Home</a>
         <a href="catalogue.html">Catalogue</a>
-        <a class="active" href="contact.html">Contact</a>
+        <a href="contact.html">Contact</a>
         <a href="about.html">About</a>
       </div>
       
 
-      <!-- ********************  CONTACT BODY  ********************* -->
-      <div class="container">
-        <div class="box">
-            <section class = "headers"> <!-- using class welcome as placeholder 
-                while css file isnt made-->
-                  <h1>CONTACT</h1>
-                   <!-- ********************  FORM ********************* -->
-                  <form class = "contact-form" action="contactfeedback.php" method="post"> 
-                    <label>Name: </label>
-                    <input type="text" name="fname" required='required'>
-                    <label>Last Name: </label>
-                    <input type="text" name="lname" required='required'><br>
-                    <label>Recipient: </label>
-                    <input type="text" name="recip" required='required'>
-                    <label>Phone Number:  </label>
-                    <input type="text" name="phone" pattern="[0-9]+" required='required' minlength="10" maxlength="12" ><br><br>
-                    <!-- *****************  TEXT AREA  ***************** -->
-                    <textarea class="contact-textarea" name="message" rows="4" cols="50"></textarea>
-                      <br><br>
-                      <input class="message-submit" type="submit" value="Submit" name="submit">
-                    </form>
-                    <p>CONTACT DETAILS: PHONE: 0278828905   EMAIL: wrdquinn@gmail.com   ADDRESS: 14/2 Wakefield Street, Auckland CBD, Auckland 1010</p>
-                </section>
+      <!-- ********************  ABOUT BODY  ********************* -->
+      <div class="columns">
+        <div class="column columnSize">
+            <section class = "headers">
+                <h1>PROFILE</h1> <!-- using class welcome as placeholder -->
+            </section>
+            <div class="g-signin2" data-onsuccess="onSignIn"></div>
+                <div class="data">
+                    <p>Name</p>
+                    <p id="name"></p>
+                    <img id="image" class="rounded-circle" width="100" height="100" />
+                    <p>Gmail</p>
+                    <p id="email"></p>
+                </div>  
+                
+                <section class = "headers">
         </div>
-      </div>
+        <div class="column columnSize">
+            <section class = "headers">
+                <h1 class = "cart">CART</h1> <!-- using class welcome as placeholder -->
+            </section>
+       </div>
+       <div class="column columnSize">
+        <section class = "headers">
+            <h1>UPDATE INFO</h1> 
+        </section>
+        <form action="registerprocess.php" method="post">
+            <table>
+              <tr>
+                  <td>Mobile:</td> 
+                  <td>
+                    <input type="phone" name="mob_digits" placeholder="Enter Mobile Number">
+                  </td>
+              </tr>
+              <tr>
+                  <td>Email Address:</td>
+                  <td><input type="email" name="mail" placeholder="Enter Email Address"></td>
+              </tr>
+              <tr>
+                <td><input class="update" type="submit" name="submit" value="Submit"></td>
+              </tr>
+            </table>
+        </form>      
+       </div>
+     </div>
       <!-- *****************  FOOTER  ***************** -->
       <footer>
         <div class="content-wrap">

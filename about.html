@@ -11,7 +11,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=PT+Serif&family=Poppins:wght@500&display=swap" rel="stylesheet">
     <meta name="google-signin-client_id" content="773304142493-8agont039ue3v46c7qv8fll90c8d95vt.apps.googleusercontent.com">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css"  rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/about-style.css">
+    <link rel="stylesheet" href="css/about.css">
     <header>
       <title>UniCars</title>
           <a href="index.html">
@@ -21,14 +21,14 @@
           <div class="data">
             <p id="name"></p>
             <img id="image" class="rounded-circle" width="50" height="50" />
+            <button onclick="location.href='profile.html'" class="btn btn-danger">Profile</button>
             <button type="button" class="btn btn-danger" onclick="signOut();">Sign Out</button>
           </div>
-          <button onclick="location.href='register.html'" class="btn-group">Sign-up</button>
-          <button onclick="location.href='login.html'" class="btn-group login-btn">Login</button>
+            <button onclick="location.href='login.html'" class="btn-group login-btn" id="in">Login</button>
     </header>
   </head>
   <body>
-    <script src="signout.js"></script>
+    <script src="gsignout.js"></script>
     <script src="https://apis.google.com/js/platform.js" async defer></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
      integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
