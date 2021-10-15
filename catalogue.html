@@ -82,8 +82,9 @@
                       <label>Make</label>
                       <select  onchange="getList('filter',this.value)" id="make_select"  >
                         <option value=""  selected="" >Select Filter </option>
-                        <option value= "Kia">Kia</option>
-                        <option value= "Mazda">Mazda</option>
+                        <option value= "Alpha Romeo">Alpha Romeo</option>
+                        <option value= "BMW">BMW</option>
+                        <option value= "Suzuki">Suzuki</option>
                         <option value= "Ford">Ford</option>
                         <option value= "Holden">Holden</option>
                         <option value= "Subaru">Subaru</option> 
@@ -107,6 +108,20 @@
                         <option value=""  selected="" >Select Filter </option>
                         <option value= "Automatic">Automatic</option>
                         <option value= "Manual">Manual</option>
+                        
+                      </select>
+                    </div>
+
+                    <div class="form-group col-md-6">
+                      <label>Body-Style</label>
+                      <select  onchange="getList('filter',this.value)"  id="bstyleselect" >
+                        <option value=""  selected="" >Select Filter </option>
+                        <option value= "Other">Other</option>
+                        <option value= "Hatchback">Hatchback</option>
+                        <option value= "Sedan">Sedan</option>
+                        <option value= "Station Wagon">Station Wagon</option>
+                        <option value= "RV/SUV">RV/SUV </option>
+                        <option value= "Convertible">Convertible </option>
                         
                       </select>
                     </div>
@@ -158,9 +173,10 @@
         var fuel = $('#fuel_select').val();
         var transmission = $('#transselect').val();
         var make = $('#make_select').val();
+        var bodystyle = $('#bstyleselect').val();
 
         if(type=="filter"){
-          if (fuel=="" && make=="" && transmission==""){
+          if (fuel=="" && make=="" && transmission=="" && bodystyle==""){
             page_data = "";
             is_mod = 0;  
           }
@@ -173,6 +189,9 @@
             fuel:fuel,
             make:make,
             transmission:transmission,
+            bodystyle:bodystyle,
+
+            
           },
           function(data, status){
 
