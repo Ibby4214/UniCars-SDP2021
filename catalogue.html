@@ -72,9 +72,30 @@
                 while css file isnt made-->
                   <h1>CATALOGUE</h1>
                   <form  onsubmit="event.preventDefault()">
-                    <label>Please Type in a keyword for a specific vehicle<input type="text" name="bsearch" id="search_input" > </label>
+                    <label>Please Type in a keyword for a specific vehicle <input type="text" name="bsearch" id="search_input" > </label>
                     <input name="sbutton" type = "button" onclick="getList('search',document.getElementById('search_input').value)" value = "Search">
                   </form>
+
+                  <script>
+                    $(function(){
+
+                    $('input[name="sbutton"]').click(function(){
+                    });
+
+
+                    //press enter on text area..
+
+                    $('#search_input').keypress(function (e) {
+                    var key = e.which;
+                    if(key == 13)  // the enter key code
+                    {
+                      $('input[name = sbutton]').click();
+                      return false;  
+                    }
+                    });
+
+                    });
+                  </script>
 
                   <br/>
                   <div class="row">
