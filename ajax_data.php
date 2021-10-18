@@ -6,7 +6,7 @@
 body {font-family: Arial, Helvetica, sans-serif;}
 
 
-.modal {
+.FullButton {
   display: none; 
   position: fixed; 
   z-index: 1; 
@@ -21,7 +21,7 @@ body {font-family: Arial, Helvetica, sans-serif;}
 }
 
 
-.modal-content {
+.FullButton-content {
   position: relative;
   background-color: #fefefe;
   margin: auto;
@@ -61,15 +61,15 @@ body {font-family: Arial, Helvetica, sans-serif;}
   cursor: pointer;
 }
 
-.modal-header {
+.FullButton-header {
   padding: 2px 16px;
   background-color: #8e53a1ff;
   color: white;
 }
 
-.modal-body {padding: 2px 16px;}
+.FullButton-body {padding: 2px 16px;}
 
-.modal-footer {
+.FullButton-footer {
   padding: 2px 16px;
   background-color: #8e53a1ff;
   color: white;
@@ -227,7 +227,7 @@ foreach($catalogue as $row){
       <form action="https://www.paypal.com/cgi-bin/webscr" method="post">
 
 <!-- Identify your business so that you can collect the payments. -->
-<input type="hidden" name="business" value="<?php echo $row['vname']; ?>@gmail.com">
+<input type="hidden" name="business" value="unicars@gmail.com">
 
 <!-- Specify a Buy Now button. -->
 <input type="hidden" name="cmd" value="_xclick">
@@ -245,19 +245,22 @@ src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" >
 
 </form>
 
+<button onclick="location.href = 'profile.html';" id="myButton" class="float-left submit-button" >Add to cart</button>
+
+
 </div>
   
 <button id="Button">Full Listing</button>
 
-<div id="Modal" class="modal">
+<div id="FullButton" class="FullButton">
 
-  <div class="modal-content">
-    <div class="modal-header">
+  <div class="FullButton-content">
+    <div class="FullButton-header">
   
       <span class="close">&times;</span>
       <h3><?php echo $row ['myear'];?></h3>
     </div>
-    <div class="modal-body">
+    <div class="FullButton-body">
       
 
 
@@ -304,7 +307,7 @@ src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" >
     
     <p><?php echo $row['fulldescrip']; ?></p>
     </div>
-    <div class="modal-footer">
+    <div class="FullButton-footer">
       <h3><?php echo $row ['make'];
       echo ' ';
       echo $row['vname']; ?></h3>
@@ -312,18 +315,18 @@ src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" >
 </div>
 
 <!-- javascript file for pop up catalogue content on catalogue page -->
-<script> var modal = document.getElementById("Modal");
-var btn = document.getElementById("Button");
-var span = document.getElementsByClassName("close")[0];
-btn.onclick = function() {
-  modal.style.display = "block";
+<script> var FullButton = document.getElementById("FullButton");
+var fulllistbutton = document.getElementById("Button");
+var sclose = document.getElementsByClassName("close")[0];
+fulllistbutton.onclick = function() {
+  FullButton.style.display = "block";
 }
-span.onclick = function() {
-  modal.style.display = "none";
+sclose.onclick = function() {
+  FullButton.style.display = "none";
 }
 window.onclick = function(event) {
-  if (event.target == modal) {
-    modal.style.display = "none";
+  if (event.target == FullButton) {
+    FullButton.style.display = "none";
   }
 }
 </script>

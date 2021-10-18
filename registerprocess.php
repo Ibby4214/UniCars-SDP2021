@@ -32,8 +32,8 @@ if(isset($_POST['submit']))
 
         // Return message for the user dictating that the form have been sucessfully submitted 
         echo '<script type = "text/javascript">';
-        echo 'alert("Registration complete, Returning to login");';
-        echo 'window.location.href = "login.html" ';
+        echo 'alert("Update complete! Returning to profile page");';
+        echo 'window.location.href = "profile.html" ';
         echo '</script>';	
         			
         

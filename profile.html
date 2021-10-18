@@ -64,23 +64,37 @@
         <section class = "headers">
             <h1>UPDATE INFO</h1> 
         </section>
-        <form action="registerprocess.php" method="post">
-            <table>
-              <tr>
-                  <td>Mobile:</td> 
-                  <td>
-                    <input type="phone" name="mob_digits" placeholder="Enter Mobile Number">
-                  </td>
-              </tr>
-              <tr>
-                  <td>Email Address:</td>
-                  <td><input type="email" name="mail" placeholder="Enter Email Address"></td>
-              </tr>
-              <tr>
-                <td><input class="update" type="submit" name="submit" value="Submit"></td>
-              </tr>
-            </table>
-        </form>      
+          
+          <form action="registerprocess.php" method="post">
+              <table>
+                <tr>
+                    <td>First Name:</td>
+                    <td><input type="text" name="fname" placeholder="Enter First Name"></td>
+                </tr>
+                <tr>
+                    <td>Last Name:</td>
+                    <td><input type="text" name="lname" placeholder="Enter Last Name"></td>
+                </tr>
+                <tr>
+                    <td>Mobile:</td>
+                    <td>
+                      <input type="phone" name="mnumber" placeholder="Enter Mobile Number">
+                    </td>
+                </tr>
+                <tr>
+                    <td>Email Address:</td>
+                    <td><input type="email" name="email" placeholder="Enter Email Address"></td>
+                </tr>
+                <tr>
+                    <td>Password:</td>
+                    <td><input type="password" name="upassword" placeholder="Enter Password"></td>
+                </tr>
+                <tr>
+                  <td><input type="submit" name="submit" value="Submit"></td>
+                </tr>
+              </table>
+          </form>
+        
        </div>
      </div>
       <!-- *****************  FOOTER  ***************** -->
