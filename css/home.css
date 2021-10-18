@@ -21,6 +21,9 @@ Colour Palette
   body{
     background-color: #8e53a1ff;
   }
+  a{
+    color: transparent;
+  }
   .btn-group{
     font-family: 'Poppins', sans-serif;
     float: right;

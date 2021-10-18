@@ -49,8 +49,8 @@
             <p id="name"></p>
             <img id="image" class="rounded-circle" width="50" height="50" />
             <button type="button" class="btn btn-danger" onclick="signOut();">Sign Out</button>
+            <button type="button" class="btn btn-danger" onclick="location.href='profile.html'">Profile </button>
           </div>
-          <button onclick="location.href='register.html'" class="btn-group">Sign-up</button>
           <button onclick="location.href='login.html'" class="btn-group login-btn">Login</button>
     </header>
   </head>
@@ -72,52 +72,85 @@
                 while css file isnt made-->
                   <h1>CATALOGUE</h1>
                   <form  onsubmit="event.preventDefault()">
-                    <label>Please Type in a keyword for a specific vehicle<input type="text" name="bsearch" id="search_input" > </label>
+                    <label>Please Type in a keyword for a specific vehicle <input type="text" name="bsearch" id="search_input" > </label>
                     <input name="sbutton" type = "button" onclick="getList('search',document.getElementById('search_input').value)" value = "Search">
-                    <script>
-                      $(function(){
-
-                      $('input[name="sbutton"]').click(function(){
-                      });
-
-
-                      //press enter on text area..
-
-                      $('#search_input').keypress(function (e) {
-                      var key = e.which;
-                      if(key == 13)  // the enter key code
-                      {
-                        $('input[name = sbutton]').click();
-                        return false;  
-                      }
-                      });
-
-                      });
-                    </script>
                   </form>
 
-                  <div id = "filters">
-                    <Span class = "make">Make</Span>
-                    <select class="select1" onchange="getList('filter',this.value)" >
-                      <option value="" disabled="" selected="" >Select Filter </option>
-                      <option value= "Kia">Kia</option>
-                      <option value= "Mazda">Mazda</option>
-                      <option value= "Ford">Ford</option>
-                      <option value= "Holden">Holden</option>
-                      <option value= "Subaru">Subaru</option>
-                      <option value= "Lexus">Lexus</option>
-                      <option value= "Toyota">Toyota</option>
-                    </select>
-                  
-                  <br>
-                  <Span class = "fuel">Fuel</Span>
-                  <select class="select2" onchange="getList('filter1',this.value)" >
-                    <option value="" disabled="" selected="" >Select Filter </option>
-                    <option value= "Petrol">Petrol</option>
-                    <option value= "Diesel">Diesel</option>
-                    <option value= "Hybrid">Hybrid</option>
-                  </select>
+                  <script>
+                    $(function(){
+
+                    $('input[name="sbutton"]').click(function(){
+                    });
+
+
+                    //press enter on text area..
+
+                    $('#search_input').keypress(function (e) {
+                    var key = e.which;
+                    if(key == 13)  // the enter key code
+                    {
+                      $('input[name = sbutton]').click();
+                      return false;  
+                    }
+                    });
+
+                    });
+                  </script>
+
+                  <br/>
+                  <div class="row">
+                    <div class="form-group col-md-6">
+                      <label>Make</label>
+                      <select  onchange="getList('filter',this.value)" id="make_select"  >
+                        <option value=""  selected="" >Select Filter </option>
+                        <option value= "Alpha Romeo">Alpha Romeo</option>
+                        <option value= "BMW">BMW</option>
+                        <option value= "Suzuki">Suzuki</option>
+                        <option value= "Ford">Ford</option>
+                        <option value= "Holden">Holden</option>
+                        <option value= "Subaru">Subaru</option> 
+                        <option value= "Lexus">Lexus</option>
+                        <option value= "Toyota">Toyota</option>
+                      </select>
+                    </div>
+                    <div class="form-group col-md-6">
+                      <label>Fuel</label>
+                      <select  onchange="getList('filter',this.value)"  id="fuel_select" >
+                        <option value=""  selected="" >Select Filter </option>
+                        <option value= "Petrol">Petrol</option>
+                        <option value= "Diesel">Diesel</option>
+                        <option value= "Hybrid">Hybrid</option>
+                      </select>
+                    </div>
+
+                    <div class="form-group col-md-6">
+                      <label class="trans">Transmission</label>
+                      <select  onchange="getList('filter',this.value)"  id="transselect" >
+                        <option value=""  selected="" >Select Filter </option>
+                        <option value= "Automatic">Automatic</option>
+                        <option value= "Manual">Manual</option>
+                        
+                      </select>
+                    </div>
+
+                    <div class="form-group col-md-6">
+                      <label class="bstyle">Body-Style</label>
+                      <select  onchange="getList('filter',this.value)"  id="bstyleselect" >
+                        <option value=""  selected="" >Select Filter </option>
+                        <option value= "Other">Other</option>
+                        <option value= "Hatchback">Hatchback</option>
+                        <option value= "Sedan">Sedan</option>
+                        <option value= "Station Wagon">Station Wagon</option>
+                        <option value= "RV/SUV">RV/SUV </option>
+                        <option value= "Convertible">Convertible </option>
+                        
+                      </select>
+                    </div>
+
+
                   </div>
+
+
                   <div class= "content" id="MAIN_CONTENT" >
 
                  
@@ -156,10 +189,30 @@
           $('#MAIN_CONTENT').html("...");
         }
 
+
+
+        var fuel = $('#fuel_select').val();
+        var transmission = $('#transselect').val();
+        var make = $('#make_select').val();
+        var bodystyle = $('#bstyleselect').val();
+
+        if(type=="filter"){
+          if (fuel=="" && make=="" && transmission=="" && bodystyle==""){
+            page_data = "";
+            is_mod = 0;  
+          }
+        }
+
          $.post("ajax_data.php",
           {
             type: type,
-            string: string
+            string: string,
+            fuel:fuel,
+            make:make,
+            transmission:transmission,
+            bodystyle:bodystyle,
+
+            
           },
           function(data, status){
 
@@ -178,6 +231,8 @@
 
       }
 
+      /*------------------------------------------------*/
+
 
       $(document).ready(function(){
         getList('regular');
@@ -186,3 +241,4 @@
       
       
     </script>
+</html>

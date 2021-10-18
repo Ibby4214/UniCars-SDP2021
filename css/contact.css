@@ -18,6 +18,9 @@ Colour Palette
   height: 25%;
   margin-left: 10px;
 }
+a{
+  color: transparent;
+}
 header{
   background-color: #4f1752ff;
   border-bottom: groove black;

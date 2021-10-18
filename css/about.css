@@ -68,7 +68,9 @@ body {
   margin: 0;
   background-color: #8e53a1ff;
 }
-
+a{
+  color: transparent;
+}
 .topnav {
   font-family: 'Poppins', sans-serif;
   overflow: hidden;

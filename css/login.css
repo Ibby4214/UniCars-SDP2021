@@ -10,6 +10,9 @@ header{
     height: 25%;
     margin-left: 10px;
 }
+a{
+  color: transparent;
+}
 body {
     margin: 0;
     background-color: #8e53a1ff;
@@ -157,5 +160,7 @@ h3{
     background-color: white;
     border: none;
     forced-color-adjust: white;
-    
 }
+.btn-danger:hover {
+  background-color: #8e53a1ff;
+ }

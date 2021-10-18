@@ -209,6 +209,14 @@ select{
   margin-left: -12.5%;
   margin-top: -3.1%;
 }
+.trans{
+  margin-left:-19%;;
+  margin-top: 3%;
+}
+.bstyle{
+  margin-left:-7%;;
+  margin-top: 3%;
+}
 .card-header{
   font-family: 'Poppins', sans-serif!important;
   color: #8e53a1ff!important;
@@ -241,6 +249,72 @@ div.car_text{
   margin-top: 3.5%;
   font-family: 'Poppins', sans-serif!important;
   color: #8e53a1ff!important;
+}
+#Button{
+  transition-duration: 0.4s;
+  background-color: #F7F7F7;
+  color: #8e53a1ff;
+  border: 2px solid #D8D8D8;
+  border-radius: .25rem;
+}
+#Button:hover {
+  background-color: #8e53a1ff;
+  color: white;
+  border-radius: .25rem;
+}
+.FullButton-header {
+  padding: 2px 16px;
+  background-color: #8e53a1ff;
+  color: white;
+  border-radius: .25rem;
+}
+.FullButton-footer {
+  padding: 2px 16px;
+  background-color: #8e53a1ff;
+  color: white;
+  border-radius: .25rem;
+  position: absolute;
+  width: 94.1%;
+  margin-top: -1%;
+}
+.cat_row {
+  padding: 2% !important;
+}
+.car_image {
+  width: 300px;
+  height: 200px;
+  border-radius: 8px;
+  margin-left: -20%;
+}
+.FullButton-content {
+  position: relative;
+  background-color: #fefefe;
+  margin: auto;
+  padding: 0;
+  border: 1px solid #888;
+  width: 80%;
+  box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%), 0 6px 20px 0 rgb(0 0 0 / 19%);
+  -webkit-animation-name: animatetop;
+  -webkit-animation-duration: 0.4s;
+  animation-name: animatetop;
+  animation-duration: 0.4s;
+  border-radius: .25rem;
+}
+.toCart{
+  width:107px;
+  height: 26px;
+  border-radius: 12px;
+  background-color: #FFC439;
+  border-style: groove;
+  border-color: #FEC339;
+  margin-top: 4%;
+  position: absolute;
+  margin-left: 83.3%;
+  font-weight: 600;
+  display: none;
+}
+.paypal{
+  display: none;
 }
 /* Home-Footer
 ---------------------------------------------*/
