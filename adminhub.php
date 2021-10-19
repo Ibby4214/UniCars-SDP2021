@@ -1,6 +1,25 @@
-
-
 <!DOCTYPE html>
+
+<link rel="stylesheet" href="css/jquery.bxslider.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="js/jquery.bxslider.js"></script>
+<style type="text/css">
+
+.slider {
+  height: 1150px;
+  width: 250px;
+
+}
+</style>
+
+<!-- Initialize the slider -->
+<script>
+  $(document).ready(function(){
+    $('.slider').bxSlider();
+  });
+</script>
+
+<p> <a href = "admin.html"> <input type="submit"value ="Go Back to Admin Control Panel"/> </a>  </p>     
 
 <form action="process.php" method="POST" enctype="multipart/form-data">
 
@@ -78,8 +97,9 @@
 <br/>
 
 <!-- Transmission -->
-<label> <input type = "Radio" id = "transmission" name= "transmission" value= "Automatic"> </label> 
-				<label for = "Automatic" > Automatic </label> 
+
+<label> <input type = "Radio" id = "transmission" name= "transmission" value= "Automatic">
+<label for = "Automatic" > Automatic </label> 
  <label> <input type = "Radio" id = "transmission" name= "transmission" value= "Manual"> </label> 
  <label for = "Manual" > Manual </label> 
 <br/>
@@ -87,15 +107,31 @@
 
  <label>Vehicle images</label>
  <br>
- <input type="file" name="images" id="images"><br>
- 
+ <input type="file" name="images" id="images">
+ <br>
+ <input type="file" name="images2" id="images2">
+ <br>
+ <input type="file" name="images3" id="images3">
+ <br>
+ <br>
+
+ <label>Description</label>
+ <br>
+ <textarea class="contact-textarea" name="descrip" rows="4" cols="50"></textarea>
+                      <br><br>
+
+<label>Full Description</label>
+ <br>
+ <textarea class="contact-textarea" name="fulldescrip" rows="4" cols="50"></textarea>
+                      <br><br>
+
  <!--  -->
 	
 
         <!-- Submit, Update and delete -->
         <br>
         <label> <input type = "Reset" value = "Reset" class = "reset" > </label> 
-         <label> <input type = "Submit" value = "Post" class = "submit" name = "submit1" > </label>    
+         <label> <input type = "Submit" value = "Post" class = "submit" name = "submit1" > </label>
         <br>
 
 </form>
@@ -136,7 +172,9 @@
                                 <td> Body Style </td>
                                 <td> Fuel </td>
                                 <td> Transmission </td>
-                                <!-- <td> Image </td> -->
+                                <td> Photos </td>
+                                <td> More Options</td>
+                                
                             </tr>
 
                             <?php 
@@ -152,7 +190,9 @@
                                         $bodystyle = $row['bodystyle'];
                                         $fuel = $row['fuel'];
                                         $transmission = $row['transmission'];
-                                        //$image = $row['images'];
+                                        $images = '<img src="data:image;base64,'.base64_encode($row['images']).'" style="width:250px; height:170px;" alt="" /><br />';
+                                        $images2 = '<img src="data:image;base64,'.base64_encode($row['images2']).'" style="width:250px; height:170px;" alt="" /><br />';
+                                        $images3 = '<img src="data:image;base64,'.base64_encode($row['images3']).'" style="width:250px; height:170px;" alt="" /><br />';
                                   
                             ?>
                                     <tr>
@@ -165,7 +205,13 @@
                                         <td><?php echo $bodystyle ?></td>
                                         <td><?php echo $fuel ?></td>
                                         <td><?php echo $transmission ?></td>
-                                        <!-- <td><?php echo $image ?></td> -->
+                                        
+                                        <td><div class="slider">
+                                        <div><?php echo $images ?></div>
+                                        <div><?php echo $images2 ?></div>
+                                        <div><?php echo $images3 ?></div>
+                                        </div></td>
+
                                         <td><a href="edit.php?GetID=<?php echo $catalogid ?>">Edit</a></td>
                                         <td><a href="delete.php?del=<?php echo $catalogid ?>">Delete</a></td>
                                     </tr>        
@@ -175,11 +221,11 @@
                                    
 
                         </table>
+                     
                     </div>
                 </div>
             </div>
-        </div>
-    
+        </div>      
 </body>
 </html>
 

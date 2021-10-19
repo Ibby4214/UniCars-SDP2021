@@ -5,9 +5,9 @@ require_once("Dbconn.php");
 		{
 
 			$email=mysqli_real_escape_string($conn, $_POST['email']);
-			$upassword=mysqli_real_escape_string($conn, $_POST['upassword']);
+			$passwordd=mysqli_real_escape_string($conn, $_POST['passwordd']);
 			
-			$sql=mysqli_query($conn, "SELECT * FROM adminlogin WHERE  upassword = '$upassword' and email ='$email'");
+			$sql=mysqli_query($conn, "SELECT * FROM adminlogin WHERE  passwordd = '$passwordd' and email ='$email'");
 			$row=mysqli_fetch_array($sql);
 			$output=mysqli_num_rows($sql);
 			

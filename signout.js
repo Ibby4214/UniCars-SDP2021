@@ -7,6 +7,9 @@ function onSignIn(googleUser) {
     $(".data").css("margin-left", "53%");
     $(".g-signin2").css("display", "none");
     $(".login-btn").css("display", "none");
+    $(".toCart").css("display", "block");
+    $(".paypal").css("display", "block");
+    $(".reminder").css("display", "none");
 }
 
 function signOut() {
@@ -16,5 +19,9 @@ function signOut() {
         $(".data").css("display", "none");
         $(".g-signin2").css("display", "none");
         $(".login-btn").css("display", "inline-block");
+        $(".toCart").css("display", "none");
+        $(".paypal").css("display", "none");
+        $(".reminder").css("display", "block");
+        location.href='index.html'
     });
 }

@@ -16,7 +16,7 @@
 				 ."<th scope=\"col\">First Name</th>\n"
 				 ."<th scope=\"col\">Last Name</th>\n"
 				 ."<th scope=\"col\">Recipient</th>\n"
-				 ."<th scope=\"col\">Phone</th>\n"
+				 ."<th scope=\"col\">Email</th>\n"
 				 ."<th scope=\"col\">Message</th>\n"
 				 ."</tr>\n";
 if ($num_rows > 0) {
@@ -25,7 +25,7 @@ if ($num_rows > 0) {
 			echo "<td>".$row["fname"]."</td>";
 			echo "<td>".$row["lname"]."</td>";
 			echo "<td>".$row["recip"]."</td>";
-			echo "<td>".$row["phone"]."</td>";
+			echo "<td><a href='mailto:".$row['email']."'>".$row['email']."</a></td>";
 			echo "<td>".$row["message"]."</td>";
 			echo "</tr>";
 		}
